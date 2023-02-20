@@ -14,7 +14,7 @@ else
 fi
 
 docker run -it \
-    -v "$(pwd)"/main.cc:/app/main.cc \
+    -v $(pwd)/main.cc:/app/main.cc \
     --name $CONTAINER \
     $IMAGE
 

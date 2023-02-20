@@ -2,6 +2,23 @@
 using namespace std;
 
 int main(){
-    cout << "Hello World!\n";
+    while (true){
+        string input = "";
+        cin >> input;
+        if (input == "q")
+            cout << "YEET\n";
+            break;
+        else{
+            cout << "oof\n";
+        }
+    };
+
+
+
+
+
+
+
+
     return 0;
 }
