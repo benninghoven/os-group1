@@ -12,9 +12,8 @@ RUN apt-get update && apt-get install -y \
 # Create a working directory for the application
 WORKDIR /app
 
-COPY . /app
+COPY main.cc .
+COPY Makefile .
+COPY run.sh .
 
-RUN make
-
-CMD ["./myapp"]
-
+CMD ["bash"]
