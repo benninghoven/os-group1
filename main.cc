@@ -2,9 +2,6 @@
 using namespace std;
 
 int main(){
-    cout << "ello world\n";
-    cout << "the zaza\n";
-    cout << "debold zaza\n";
-    cout << "debold zaza\n";
+    cout << "Hello world\n";
     return 0;
 }
