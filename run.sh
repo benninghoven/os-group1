@@ -1,3 +1,1 @@
-make > /dev/null
-./myapp
-make clean > /dev/null
+make > /dev/null && ./app && make clean > /dev/null

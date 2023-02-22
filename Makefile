@@ -3,7 +3,7 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 
 # Specify the name of the executable
-EXECUTABLE = myapp
+EXECUTABLE = app
 
 # Specify the source files
 SRC = main.cc
