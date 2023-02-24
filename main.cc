@@ -131,7 +131,7 @@ void shellHelp(string s)
 
 void shellHelpZeroArgs()
 {
-    system("help ");
+    system("help");
 }
 
 void shellVol()
