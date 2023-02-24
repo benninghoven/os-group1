@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     gdb \
-    make
+    make \
+    vim
 
 # Create a working directory for the application
 WORKDIR /app

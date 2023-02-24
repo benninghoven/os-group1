@@ -7,17 +7,6 @@
 #include <thread> // create threads using C++ library
 using namespace std;
 
-set<string> setOfCommands = {
-    "dir",
-    "help",
-    "vol",
-    "path",
-    "tasklist",
-    "notepad",
-    "echo",
-    "color",
-    "ping"};
-
 string greeting = "Welcome to myShell";
 string prompt = "==> ";
 string exitMessage = "Thanks for using myShell!";
@@ -26,11 +15,11 @@ void shellDir();          // works
 void shellVol();          // works
 void shellPath();         // works
 void shellTaskList();     // works
-void shellNotepad();      // TODO
-void shellHelp(string s); 
+void shellNotepad();      // works
+void shellHelp(string s); // Oof?
 void shellPing(string s); // almost works; @Tokkisan got ping working in their codebase, however I haven't got it working here
-void shellEcho(string s); // almost works; need way of clearing 2nd argument on different loop runs
-// void shellColor(string s);
+void shellEcho(string s); // works?
+void shellColor(string s); //works
 
 int main()
 {
@@ -78,7 +67,6 @@ int main()
         if (strcmp(args[0], "echo") == 0)
         {
             string sussy = args[1];
-            cout << "sussy is " << sussy << endl;
             thread t(&shellEcho, sussy);
             t.join();
         }
@@ -111,6 +99,12 @@ int main()
         if (strcmp(args[0], "notepad") == 0)
         {
             thread t(&shellNotepad);
+            t.join();
+        }
+        if (strcmp(args[0], "color") == 0)
+        {
+            string arg = args[1];
+            thread t(&shellColor, arg);
             t.join();
         }
     }
@@ -160,8 +154,8 @@ void shellPing(string s)
          << ("ping " + s).c_str() << endl;
     system(("ping -c 4 " + s).c_str());
 }
-
-// void shellColor(string s)
-// {
-//     // code here
-// }
+void shellColor(string s)
+{
+    // VET INPUT -DJB
+    system(("tput setaf " + s).c_str());
+ }
