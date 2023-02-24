@@ -67,16 +67,23 @@ int main()
         if (strcmp(args[0], "echo") == 0)
         {
             string sussy = args[1];
-            thread t(&shellEcho, sussy);
+            thread t(&shellEcho, args[1]);
             t.join();
         }
 
         if (strcmp(args[0], "help") == 0)
         {
             string sussyest = args[1];
-            cout << "sussyest is " << sussyest << endl;
-            thread t(&shellHelp, sussyest);
-            t.join();
+            if(args[1] == NULL)
+            {
+                thread t(&shellHelpZeroArgs);
+                t.join();
+            }
+            else
+            {
+                thread t(&shellHelp, sussyest);
+                t.join();
+            }
         }
         if (strcmp(args[0], "vol") == 0)
         {
@@ -120,6 +127,11 @@ void shellDir()
 void shellHelp(string s)
 {
     system(("help " + s).c_str());
+}
+
+void shellHelpZeroArgs()
+{
+    system("help ");
 }
 
 void shellVol()
