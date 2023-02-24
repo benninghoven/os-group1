@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     gdb \
-    make
+    make \
+    nano \
+    man-db
 
 # Create a working directory for the application
 WORKDIR /app
