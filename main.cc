@@ -61,23 +61,23 @@ int main()
         }
         if (strcmp(args[0], "ping") == 0)
         {
-            string sus = args[1];
-            thread t(&shellPing, sus);
+            string pingStr = args[1];
+            thread t(&shellPing, pingStr);
             t.join();
-            sus.clear();
+            pingStr.clear();
         }
         if (strcmp(args[0], "echo") == 0)
         {
-            string sussy = args[1];
-            thread t(&shellEcho, sussy);
+            string echoStr = args[1];
+            thread t(&shellEcho, echoStr);
             t.join();
         }
 
         if (strcmp(args[0], "help") == 0)
         {
-            string sussyest = args[1];
-            cout << "sussyest is " << sussyest << endl;
-            thread t(&shellHelp, sussyest);
+            string helpStr = args[1];
+            cout << "helpStr is " << helpStr << endl;
+            thread t(&shellHelp, helpStr);
             t.join();
         }
         if (strcmp(args[0], "vol") == 0)
